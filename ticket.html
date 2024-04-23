@@ -56,26 +56,65 @@
       </ul>
     </header>
 
+
     <div id="contantWrap">
+      <div class="contant">
+
+        <ul>
+          <li class="lishow1">상세정보</li>
+          <li class="lishow2">오시는길</li>
+        </ul>
+
+        <div class="li-1">
+          <img src="img/상세정보.png" alt="꽃박람회 상세정보">
+          <h1 class="view">더보기</h1>
+        </div>
+
+        <div class="li-2 on1">
+          <!-- * 카카오맵 - 지도퍼가기 -->
+          <!-- 1. 지도 노드 -->
+          <div id="daumRoughmapContainer1713854065927" class="root_daum_roughmap root_daum_roughmap_landing"
+            style="width: 100%;"></div>
+
+          <!--
+          	2. 설치 스크립트
+          	* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+          -->
+          <script charset="UTF-8" class="daum_roughmap_loader_script"
+            src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+          <!-- 3. 실행 스크립트 -->
+          <script charset="UTF-8">
+            setTimeout(function () {
+              new daum.roughmap.Lander({
+                "timestamp": "1713854065927",
+                "key": "2j4c9",
+              }).render();
+            }, 1000);
+          </script>
+        </div>
+
+
+
+
+
+      </div>
       <div class="contant1">
-        <img src="img/main-img1.jpg" alt="행사기간안내">
+
         <div class="ticketbox">
           <h1>가격/수량 선택</h1>
-
-
           <div class="list1">
             <div class="t1">사전예매할인 1인 일반권</div>
             <div class="t2">11,000원</div>
-            <div class="btn1"><button id="down1">-</button><input id="num1" type="text" value="0" maxlength="2"
-                ><button id="up1">+</button></div>
+            <div class="btn1"><button id="down1">-</button><input id="num1" type="text" value="0" maxlength="2"><button
+                id="up1">+</button></div>
           </div>
 
           <div class="list1">
             <div class="t1">사전예매할인 1인 우대권</div>
             <div class="t2">&nbsp; 9,000원</div>
-            <div class="btn1"><button id="down2">-</button><input id="num2" type="text"
-                 value="0" maxlength="2" 
-              ><button id="up2">+</button></div>
+            <div class="btn1"><button id="down2">-</button><input id="num2" type="text" value="0" maxlength="2"><button
+                id="up2">+</button></div>
           </div>
 
 
@@ -87,35 +126,183 @@
               <h1><span id="sum2">0</span>원</h1>
             </div>
           </div>
+        </div>
 
-          <div class="info">
-            <div><i class="fa-solid fa-circle-info"></i> <span>예약 유의사항</span></div>
+
+        <div class="rebox">
+          <h1>예매자 정보</h1>
+          <ul>
+            <li><label for="rename"><i class="fa-regular fa-circle-user"></i>예매자 이름</label></li>
+            <li><input type="text" id="rename"></li>
+            <li><label for="rePnumber"><i class="fa-solid fa-mobile-screen-button"></i>휴대폰 번호</label></li>
+            <li><input type="number" id="rePnumber"></li>
+            <li><label for="reemail"><i class="fa-regular fa-envelope"></i>이메일(선택)</label></li>
+            <li><input type="email" id="reemail"></li>
+            <li><label for="renumber"><i class="fa-solid fa-unlock-keyhole"></i>예약확인번호</label></li>
+            <li><input type="number" id="renumber" placeholder="예약확인번호 4자리를 설정해주세요." maxlength="4"></li>
+          </ul>
+        </div>
+
+
+        <div class="info">
+          <div><i class="fa-solid fa-circle-info"></i> <span>예약 유의사항</span></div>
+          <ul>
+            <li>결제 시, 사용 업체는 (주)스마틱스로 표시됩니다.</li>
+            <li>결제 완료 후 모바일티켓이 휴대폰으로 전송됩니다. <br>(e-mail 주소를 입력하신 분만 예약 내역 메일을 받아 볼 수 있습니다.)</li>
+            <li>거래 영수증 확인 및 예약 취소는 예약내역 페이지에서 확인 가능합니다.</li>
+          </ul>
+        </div>
+
+        <div class="agree">
+          <div class="agree1">
+            <p><input type="checkbox" name="agrcheck1" id="agrT1" onclick="selectAll1(this)"><label for="agrT1"
+                style="font-size: 16px; font-weight: bold;">이용자
+                약관 전체동의</label></p>
             <ul>
-              <li>결제 시, 사용 업체는 (주)스마틱스로 표시됩니다.</li>
-              <li>결제 완료 후 모바일티켓이 휴대폰으로 전송됩니다. <br>(e-mail 주소를 입력하신 분만 예약 내역 메일을 받아 볼 수 있습니다.)</li>
-              <li>거래 영수증 확인 및 예약 취소는 예약내역 페이지에서 확인 가능합니다.</li>
+              <li>
+                <p><input type="checkbox" name="agrcheck1" id="agrT2"><label for="agrT2">개인정보 수집·이용 동의 (필수)</label>
+                  <span id="agrS1">내용보기</span>
+                </p>
+
+                <div class="agreeshow1">
+                  <p>예매자 확인 및 예매처리를 위해 아래와 같이 개인정보를 수집·이용 합니다. 동의를 거부하실 수 있으며, 이 경우 서비스 이용이 제한될 수 있습니다.</p>
+                  <table border="1">
+                    <tr>
+                      <td>수집이용·목적</td>
+                      <td>서비스 제공을 위한 예매자 확인 및 예매처리</td>
+                    </tr>
+                    <tr>
+                      <td>수집항목</td>
+                      <td>예매자정보 (이름, 휴대폰번호, 이메일 주소)</td>
+                    </tr>
+                    <tr>
+                      <td>보유 및 이용기간</td>
+                      <td>개인정보 이용목적 달성 시까지(단, 관계 법령의 규정에 의해 보존의 필요가 있는 경우 및 사전 동의를 득한 경우 해당 보유기간까지)</td>
+                    </tr>
+                  </table>
+                </div>
+
+              </li>
+              <li>
+                <p><input type="checkbox" name="agrcheck1" id="agrT3"><label for="agrT3">개인정보 제3자 제공 동의 (필수)</label>
+                  <span id="agrS2">내용보기</span>
+                </p>
+
+                <div class="agreeshow2">
+                  <p>예매내역 확인 및 고객응대 등 서비스 제공을 위하여 아래와 같이 정보가 제공됩니다. 동의를 거부하실 수 있으며, 이 경우 서비스 이용이 제한될 수 있습니다.</p>
+                  <table border="1">
+                    <tr>
+                      <td>개인정보 제공 받는자</td>
+                      <td>2024 고양국제꽃박람회</td>
+                    </tr>
+                    <tr>
+                      <td>목적</td>
+                      <td>예매내역 확인, 고객안내 및 응대, 만족도조사 및 통계, 결과보고 등</td>
+                    </tr>
+                    <tr>
+                      <td>제공항목</td>
+                      <td>예매자정보 (이름, 휴대폰번호, 이메일 주소)</td>
+                    </tr>
+                    <tr>
+                      <td>보유 및 이용기간</td>
+                      <td>개인정보 이용목적 달성 시까지(단, 관계 법령의 규정에 의해 보존의 필요가 있는 경우 및 사전 동의를 득한 경우 해당 보유기간까지)</td>
+                    </tr>
+                  </table>
+                </div>
+
+              </li>
+              <li>
+                <p><input type="checkbox" name="agrcheck1" id="agrT4"><label for="agrT4">만 14세 이상에 동의 (필수)</label>
+                  <span id="agrS3">내용보기</span>
+                </p>
+                <div class="agreeshow3">
+                  <p>만 14세 이상 동의 전문 (필수동의) 본 서비스는 전자상거래 결제 특성상 만 14세 이상만 이용 가능합니다. 만 14세 이상임을 확인합니다.</p>
+                </div>
+              </li>
+
+              <li>
+                <p><input type="checkbox" name="agrcheck1" id="agrT5"><label for="agrT5">광고성 정보수신 동의 (선택)</label>
+                  <span id="agrS4">내용보기</span>
+                </p>
+                <div class="agreeshow4">
+                  <p>메이크티켓의 서비스와 관련하여, 본인은 서비스에서 본인에게 전자적 전송매체를 통해, 마케팅 등의 목적으로 개인에게 최적화된 광고 또는 정보를 다음과 같이 전송하는 것에
+                    동의합니다.</p>
+                  <p>서비스에서는 고객이 수집 및 이용에 동의한 개인정보를 활용하여, 전자적 전송매체(SMS/MMS/e-mail 등 다양한 전송매체)를 통해 (주)스마틱스 및 제 3자의 상품 또는
+                    서비스에 대한 개인 맞춤형 광고 및 정보를 전송할 수 있습니다. 고객이 본 수신동의를 철회하고자 할 경우 고객상담(02-866-6480)으로 연락하여 수신동의 철회를 할 수
+                    있습니다.</p>
+                  <hr>
+                  <p>* 본 동의는 선택동의로서 동의하지 않더라도 서비스 이용이 가능합니다.</p>
+                </div>
+              </li>
             </ul>
+          </div>
+
+          <div class="agree2">
+            <p><input type="checkbox" name="agrcheck2" id="agreeT1" onclick="selectAll2(this)"><label for="agreeT1"
+                style="font-size: 16px; font-weight: bold;">취소/환불규정 전체동의</label></p>
+            <ul>
+              <li>
+                <p><input type="checkbox" name="agrcheck2" id="agreeT2"><label for="agreeT2">개인정보 수집·이용 동의 (필수)</label>
+                  <span id="agrS5">내용보기</span>
+                </p>
+
+                <div class="agreeshow5">
+
+                  <table border="1">
+                    <tr>
+                      <th>취소일</th>
+                      <th>취소수수료</th>
+                    </tr>
+                    <tr>
+                      <td>예매 당일 및 이용일 0일 전 0시간 전</td>
+                      <td>취소수수료 없음</td>
+                    </tr>
+                    <tr>
+                      <td>이용일 이후</td>
+                      <td>100%</td>
+                    </tr>
+                  </table>
+                  <ul>
+                    <li>기간상품일 경우, 이용일은 상품 종료일자 기준으로 정해집니다.</li>
+                    <li>미사용 티켓은 이용일 종료 이후 100% 전액 환불됩니다.</li>
+                    <li>사용한 티켓은 환불 불가능합니다. (한 군데라도 사용하신 티켓은 환불이 불가능합니다.)</li>
+                    <li>티켓 구매 이후, 부분 취소/환불은 불가합니다.</li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+
+          <div class="total">
+            <h1>총 결제금액<span id="sum3">0</span>원</h1>
+          </div>
+          <div class="pay">
+            <h1>결제하기</h1>
           </div>
         </div>
 
-        <div>
-
-        </div>
       </div>
-      <div class="contant2">
-        <p>경기 고양시 일산동구 호수로 731 (장항동)
-          일산호수공원 일원</p>
-        <p>이용안내
-          : 행사관련 문의
-          : 031-908-7750</p>
 
-        <p>예약관련 문의
-          : 070-4322-3118 / 070-5099-7327</p>
 
-        <p>https://flower.or.kr/</p>
-      </div>
+
+
     </div>
+
+
+    <footer>
+      <p>경기 고양시 일산동구 호수로 731 (장항동)
+        일산호수공원 일원</p>
+      <p>이용안내
+        : 행사관련 문의
+        : 031-908-7750</p>
+
+      <p>예약관련 문의
+        : 070-4322-3118 / 070-5099-7327</p>
+      <p><a href="https://flower.or.kr/">https://flower.or.kr/</a></p>
+    </footer>
   </div>
+
 
 
 

@@ -224,7 +224,7 @@
     background-color: pink;
   }
 
- 
+
 
 
 
@@ -232,23 +232,23 @@
   .proWrap {
     width: 100%;
     margin: auto;
-    
+
     overflow: hidden;
     position: relative;
     background: radial-gradient(ellipse at bottom, rgb(250, 189, 198) 0%, #fff 100%);
   }
 
-   /* path */
+  /* path */
 
-   .path {
+  .path {
     fill: none;
     stroke: #6e6868;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-width: 2px;
-   }
+  }
 
-   .pathbox2 {
+  .pathbox2 {
     position: absolute;
     top: 0;
     left: 6.8%;
@@ -531,9 +531,10 @@
 
     .menu {
       display: none;
+      position: fixed;
       width: 200px;
-      margin-left: 45%;
-      margin-top: 10%;
+      right: -70px;
+      margin-top: 11%;
     }
 
     .menu>li>a {
@@ -643,7 +644,7 @@
     .prolist ul {
       font-size: 70%;
     }
-  
+
     .prolist ul li:hover {
       font-size: 120%;
     }
@@ -653,7 +654,7 @@
       top: 0;
       left: -11%;
     }
-  
+
     .pathbox3 {
       top: 36%;
       left: 75%;

@@ -14,12 +14,12 @@ a {
 
 /* 폰트 */
 @font-face {
-  font-family: '나눔';
-  src: url('../font/NanumGothic.woff2');
+  font-family: "나눔";
+  src: url("../font/NanumGothic.woff2");
 }
 
 body {
-  font-family: '나눔';
+  font-family: "나눔";
 }
 
 #container {
@@ -27,7 +27,6 @@ body {
 }
 
 /* header */
-
 
 header {
   height: 60px;
@@ -41,7 +40,6 @@ header {
 .logo {
   margin-top: 5px;
   margin-left: 20px;
-
 }
 
 .menu {
@@ -49,7 +47,6 @@ header {
   text-align: center;
   justify-content: end;
   margin-right: 30px;
-
 }
 
 .menu>li>a {
@@ -58,8 +55,7 @@ header {
   line-height: 60px;
   font-size: 20px;
   font-weight: bold;
-  transition: .3s;
-
+  transition: 0.3s;
 }
 
 .sub {
@@ -96,19 +92,102 @@ header {
   display: none;
 }
 
+/* 배너이미지 */
+.banner>img {
+  width: 100%;
+  height: auto;
+}
 
 /* contantWrap */
 #contantWrap {
   display: flex;
+  margin-top: 100px;
 }
 
+
+/* contant */
+.contant {
+  width: 40%;
+}
+
+.contant>ul {
+  display: flex;
+  height: 50px;
+  width: 95%;
+  margin: auto;
+  margin-top: 20px;
+
+}
+
+.contant>ul li {
+  flex: 1;
+  line-height: 50px;
+  text-align: center;
+  background-color: #f0f6f6;
+  font-weight: bold;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.contant>ul li:hover {
+  background-color: pink;
+}
+
+.contant .li-1 {
+  width: 95%;
+  height: 600px;
+  overflow: hidden;
+  margin: auto;
+  position: relative;
+}
+
+.contant .li-1>img {
+  width: 100%;
+}
+
+.contant .li-1>h1 {
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  transform: translate(-50%, -50%);
+  background-color: pink;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 20px;
+  cursor: pointer;
+
+}
+
+.contant .li-1>h1:hover {
+  animation: ani 2s infinite linear;
+}
+
+@keyframes ani {
+  50% {
+    background-color: palevioletred;
+  }
+}
+
+.contant .li-2 {
+  width: 95%;
+  margin: auto;
+}
+
+.on1 {
+  /* 상세정보 / 오시는길에 적용 */
+  display: none;
+}
+
+
+/* contant1 */
 
 .contant1 {
-  width: 70%;
+  width: 60%;
+  border-left: 1px solid silver;
 }
 
-.contant1 .ticketbox {
-  width: 60%;
+.contant1>div {
+  width: 70%;
   margin: auto;
 }
 
@@ -116,15 +195,16 @@ header {
   font-size: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
 }
 
 .list1 {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
-  background-color: antiquewhite;
+  background-color: #f0f6f6;
   padding: 10px;
-  border-radius: 10px;
   justify-content: space-around;
 }
 
@@ -133,9 +213,6 @@ header {
   font-weight: bold;
 }
 
-.btn1 {
-  text-align: right;
-}
 
 .btn1>* {
   width: 30px;
@@ -143,27 +220,88 @@ header {
   font-size: 15px;
   font-weight: bold;
   text-align: center;
+  border: 1px solid silver;
 }
 
-.contant1>img {
-  width: 100%;
-  height: auto;
+#down1,
+#down2 {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
+
+#up1,
+#up2 {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+
 
 .list2 {
   display: flex;
   justify-content: space-around;
-  font-size: 16px;
-  background-color: antiquewhite;
+  font-size: 13px;
+  background-color: #f0f6f6;
   border-radius: 10px;
   padding: 10px;
-  margin-top: 30px;
+  margin-top: 10px;
+  width: 50%;
+  margin-left: 50%;
 }
 
 
-.info {
-  background-color: antiquewhite;
+/* 예매 정보 */
+.contant1 .rebox {
+  margin-top: 40px;
+  background-color: #f0f6f6;
+}
+
+.rebox>h1 {
+  font-size: 20px;
+  font-size: 20px;
   margin-top: 20px;
+  margin-bottom: 20px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+}
+
+
+.rebox ul {
+  width: 80%;
+  margin: auto;
+}
+
+.rebox>ul>li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.rebox>ul>li:last-child {
+  margin-bottom: 0;
+}
+
+.rebox>ul>li i {
+  width: 30px;
+  text-align: center;
+}
+
+.rebox>ul>li input {
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  /* 인풋타입이 넘버 증감 화살표 없애는 */
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* 예약주의사항 */
+.info {
+  background-color: #f0f6f6;
 }
 
 .info>div {
@@ -174,35 +312,191 @@ header {
 .info>ul {
   padding: 20px;
   font-size: 13px;
-  
 }
 
 .info>ul>li {
   margin-left: 10px;
   margin-bottom: 8px;
   list-style: circle;
-  
+}
+
+
+/* 이용약관 */
+
+.agree {
+  width: 95%;
+  margin: auto;
+  padding: 10px;
+  background-color: #f0f6f6;
+}
+
+
+.agree1>ul>li>p>span,
+.agree2>ul>li>p>span {
+  /* 내용보기 */
+  cursor: pointer;
+  color: darkred;
+  font-size: 11px;
+  width: 50%
+}
+
+/* 내용보기 숨겨진 박스 */
+.agreeshow1,
+.agreeshow2,
+.agreeshow3,
+.agreeshow4,
+.agreeshow5 {
+  display: none;
+  color: dimgray;
+  margin: 30px 0;
+  font-size: 11px;
+
+
+}
+
+table {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  margin: 20px 0;
+  border-collapse: collapse;
+}
+
+/* agree1, agree2 글자 간격 */
+.agree1>p,
+.agree2>p {
+  margin-bottom: 10px;
+}
+
+.agree1>ul>li {
+  line-height: 30px;
+}
+
+
+.agree2 {
+  margin-top: 30px;
+}
+
+
+/* 총 결제금액 */
+.total {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.total>h1>span {
+  margin-left: 50px;
+  color: darkred;
+}
+
+/* 결제하기 */
+.agree .pay {
+  margin: auto;
+  width: 50%;
+  height: 50px;
+  background-color: rgb(235, 233, 233);
+  color: gray;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 50px;
+  margin-bottom: 50px;
+}
+
+.agree .pay>h1 {
+  font-size: 20px;
+}
+
+.on {
+  /* 약관 필수 체크시 결제하기 스타일변경 */
+  background-color: palevioletred;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+
+/* 인풋 : 체크박스 스타일적용 */
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]+label {
+  cursor: pointer;
+  vertical-align: middle;
+  font-size: 13px;
+}
+
+/* 체크 전 */
+input[type="checkbox"]+label:before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
+  border: 2px solid #bccbff;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+/* 체크 후*/
+input[type="checkbox"]:checked+label:before {
+  content: "✔";
+  border-color: palevioletred;
+  color: #4b5370;
+  background-repeat: no-repeat;
+  background-position: 50%;
 }
 
 
 
-
-/* contant2 */
-.contant2 {
-  width: 30%;
-  background-color: bisque;
+footer {
+  background-color: #00101e;
+  color: white;
+  height: 100px;
+  font-size: 13px;
+  text-align: center;
+  padding: 20px;
 }
 
-@media screen and (max-width:769px) {
+@media screen and (max-width: 1275px) {
+  .list2 {
+    width: 100%;
+    margin-left: 0;
+    font-size: 80%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .contant1>div {
+    width: 80%;
+  }
+
+  .t1,
+  .t2 {
+    font-size: 80%;
+  }
+
+  .total {
+    font-size: 90%;
+  }
+
+  .agree .pay>h1 {
+    font-size: 100%;
+  }
+}
+
+@media screen and (max-width: 769px) {
   #icon1 {
     display: block;
   }
 
   .menu {
     display: none;
+    position: fixed;
     width: 200px;
-    margin-left: 45%;
-    margin-top: 10%;
+    right: -70px;
+    margin-top: 12%;
   }
 
   .menu>li>a {
@@ -212,9 +506,54 @@ header {
 
   .sub {
     width: 150px;
+    height: auto;
+    line-height: 30px;
   }
 
-    .contant1 .ticketbox {
-      width: 90%;
-    }
+  #contantWrap {
+    flex-direction: column;
+  }
+
+  .contant,
+  .contant1 {
+    width: 100%;
+  }
+
+  .contant1>div {
+    width: 95%;
+  }
+
+  table {
+    text-align: center;
+    width: 95%;
+    margin: auto;
+  }
+
+  .contant .li-1 {
+    height: 500px;
+  }
+
+  .t1,
+  .t2 {
+    font-size: 80%;
+  }
+
+  input[type="checkbox"]+label:before {
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+  }
+
+  .total {
+    font-size: 80%;
+  }
+
+  .agree .pay>h1 {
+    font-size: 100%;
+  }
+
 }
+
+
+
+@media screen and (max-width: 500px) {}
