@@ -182,7 +182,7 @@ proImgObserve.observe(proImg[6])
 
 
 
-//prolist
+//prolist - .pro 위치부터 보임
 
 let prolist = document.querySelector('.prolist');
 let listObserve = new IntersectionObserver((e) => {
@@ -193,36 +193,53 @@ let listObserve = new IntersectionObserver((e) => {
   })
 })
 
-
 let show = document.querySelector('.pro');
-listObserve.observe(show)
+listObserve.observe(show);
 
 
-//이용권구매
+//prolist - sitelist 보이면 사라짐
 
-let ticket = document.querySelector('.ticketbox');
-let ticketObserve = new IntersectionObserver((e) => {
-  e.forEach((a) => {
-    if (a.isIntersecting) {
-      ticket.style.display = 'block';
-      } else {ticket.style.display = 'none';}
+let list2Observe = new IntersectionObserver((a)=>{
+  a.forEach((s)=>{
+    if(s.isIntersecting) {
+      prolist.style = 'display : none;';
+    } else { prolist.style = 'display : block;';}
   })
 })
-
-
-let show1 = document.querySelector('.prolist');
-ticketObserve.observe(show1)
-
+let none = document.querySelector('.sitelist')
+list2Observe.observe(none);
 
 //sitebanner
+const tabasBox = document.querySelector('.tabs-box'),
+arrowIcons = document.querySelectorAll('.icon i');
 
-var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 6,
-      spaceBetween: 30,
-      loop: true,
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-  
-    });
+let isDragging = false;
+
+const handleIcons = ()=> {
+    let scroll = tabasBox.scrollLeft;
+    let maxScroll = tabasBox.scrollWidth - tabasBox.clientWidth;
+    arrowIcons[0].parentElement.style.display = scroll > 0 ? 'flex' : 'none';
+    arrowIcons[1].parentElement.style.display = maxScroll > scroll ? 'flex' : 'none';
+}
+
+arrowIcons.forEach(icon => {
+    icon.addEventListener('click', ()=> {
+        tabasBox.scrollLeft += icon.id === 'left' ? -300 : 300;
+        setTimeout(()=> handleIcons(), 50);
+    })
+})
+
+const dragging = function(e){
+    if(!isDragging) return;
+    tabasBox.classList.add('dragging');
+    tabasBox.scrollLeft -= e.movementX;
+}
+
+const dragStop = ()=> {
+    isDragging = false;
+    tabasBox.classList.remove('dragging');
+}
+
+tabasBox.addEventListener('mousemove', dragging);
+tabasBox.addEventListener('mousedown', ()=> isDragging = true);
+document.addEventListener('mouseup', dragStop);

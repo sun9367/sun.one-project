@@ -1,665 +1,774 @@
-  /* 리셋 */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
+/* 리셋 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 폰트 */
+@font-face {
+  font-family: "나눔";
+  src: url("../font/NanumGothic.woff2");
+}
+
+body {
+  font-family: "나눔";
+  background: radial-gradient(
+    ellipse at bottom,
+    rgb(250, 189, 198) 0%,
+    #fff 100%
+  );
+}
+
+#container {
+  width: 100%;
+}
+
+/* header */
+
+header {
+  height: 60px;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.logo {
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+.menu {
+  display: flex;
+  text-align: center;
+  justify-content: end;
+  margin-right: 30px;
+}
+
+.menu > li > a {
+  width: 120px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.sub {
+  display: none;
+  width: 120px;
+  height: 250px;
+  line-height: 35px;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+}
+
+.sub li:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+#icon1 {
+  position: absolute;
+  font-size: 40px;
+  right: 20px;
+  top: 10px;
+  z-index: 99;
+  cursor: pointer;
+  display: none;
+}
+
+#icon2 {
+  position: absolute;
+  font-size: 40px;
+  right: 20px;
+  top: 10px;
+  z-index: 101;
+  cursor: pointer;
+  display: none;
+}
+
+/* 텍스트효과 */
+.maintext {
+  margin-top: -60px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(107, 34, 46, 0.3);
+  text-align: center;
+  padding-top: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.maintext h1 {
+  font-size: 80px;
+  color: transparent;
+  -webkit-text-stroke: 0.1px white;
+}
+
+.maintext h2 {
+  color: white;
+  transition: 1s;
+}
+
+.maintext p {
+  color: white;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.maintext span {
+  animation: aa 5s infinite linear;
+}
+
+@keyframes aa {
+  50% {
+    color: darkorange;
+  }
+}
+
+.maintext video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+/* path1 */
+.path1 {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+  stroke-dasharray: 7000;
+  animation: drawPath1 4s linear, floating 2.2s linear infinite;
+}
+
+@keyframes drawPath1 {
+  0% {
+    stroke-dashoffset: 7000;
   }
 
-  a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
+  100% {
+    stroke-dashoffset: 0;
   }
+}
 
-  /* 폰트 */
-  @font-face {
-    font-family: '나눔';
-    src: url('../font/NanumGothic.woff2');
+@keyframes floating {
+  50% {
+    transform: translate3d(0, 40px, 0);
   }
+}
 
-  body {
-    font-family: '나눔';
-  }
+/* 빠른메뉴 */
+.quick {
+  margin-top: -250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  position: relative;
+}
 
-  #container {
-    width: 100%;
-  }
+.quick > a > div {
+  width: 150px;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  transition: 1s;
+}
 
-  /* header */
+.quick > a > div > p {
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 1s;
+}
 
-  header {
-    height: 60px;
-    display: flex;
-    position: relative;
-    z-index: 1;
-    justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.5);
-  }
+#line1 {
+  margin: auto;
+  width: 0px;
+  height: 2px;
+  background-color: pink;
+}
 
-  .logo {
-    margin-top: 5px;
-    margin-left: 20px;
+#line2 {
+  margin: auto;
+  width: 0px;
+  height: 2px;
+  background-color: pink;
+}
 
-  }
+#line3 {
+  margin: auto;
+  width: 0px;
+  height: 2px;
+  background-color: pink;
+}
 
-  .menu {
-    display: flex;
-    text-align: center;
-    justify-content: end;
-    margin-right: 30px;
+/* 프로그램 안내*/
+.proWrap {
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  
+}
 
-  }
+/* path */
 
-  .menu>li>a {
-    width: 120px;
-    height: 60px;
-    line-height: 60px;
-    font-size: 20px;
-    font-weight: bold;
-    transition: .3s;
+.path {
+  fill: none;
+  stroke: #6e6868;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+}
 
-  }
+.pathbox2 {
+  position: absolute;
+  top: 0;
+  left: 6.8%;
+}
 
-  .sub {
-    display: none;
-    width: 120px;
-    height: 250px;
-    line-height: 35px;
-    background-color: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    color: white;
-  }
+.pathbox3 {
+  position: absolute;
+  top: 33%;
+  left: 65%;
+}
 
-  .sub li:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-  }
+.pathbox4 {
+  position: absolute;
+  left: 15%;
+  top: 67%;
+}
 
+.proT {
+  height: 300px;
+  padding-top: 180px;
+  text-align: center;
+  color: #543139;
+  margin-top: 300px;
+  margin-bottom: 50px;
+  transition: all 1s;
+  opacity: 0;
+}
 
+.proT h2 {
+  font-size: 60px;
+  color: #0f020b;
+  transition: 1s;
+}
 
-  #icon1 {
-    position: absolute;
-    font-size: 40px;
-    right: 20px;
-    top: 10px;
-    z-index: 99;
-    cursor: pointer;
-    display: none;
-  }
+.prolist {
+  position: fixed;
+  top: 30%;
+  left: 2%;
+  z-index: 1;
+  display: none;
+  
+}
 
-  #icon2 {
-    position: absolute;
-    font-size: 40px;
-    right: 20px;
-    top: 10px;
-    z-index: 101;
-    cursor: pointer;
-    display: none;
-  }
+.prolist div {
+  width: 90px;
+  height: 36.5px;
+  margin-left: -5px;
+}
 
-  /* 텍스트효과 */
-  .maintext {
-    margin-top: -60px;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(107, 34, 46, 0.3);
-    text-align: center;
-    padding-top: 300px;
-    overflow: hidden;
-    position: relative;
-  }
+.prolist ul {
+  color: #99a3b9;
+  font-weight: bold;
+  font-size: 13px;
+}
 
-  .maintext h1 {
-    font-size: 80px;
-    color: transparent;
-    -webkit-text-stroke: 0.1px white;
-  }
+.prolist ul li {
+  padding-bottom: 20px;
+  list-style: circle;
+}
 
+.prolist ul li:hover {
+  list-style: square;
+  font-size: 16px;
+  color: #4f5a67;
+}
 
-  .maintext h2 {
-    color: white;
-    transition: 1s;
-  }
+/* 입장권구매 */
+.ticketbox p {
+  margin-top: 10px;
+  margin-left: -5px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  color: black;
+}
 
-  .maintext p {
-    color: white;
-    padding: 20px;
-    font-size: 18px;
-  }
+.ticketimg {
+  position: relative;
+  height: 36.5px;
+  overflow: hidden;
+}
 
-  .maintext span {
-    animation: aa 5s infinite linear;
-  }
-
-  @keyframes aa {
-    50% {
-      color: darkorange;
-    }
-  }
-
-  .maintext video {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    left: 0;
-    top: 0;
-    z-index: -1;
-  }
-
-  /* path1 */
-  .path1 {
-    fill: none;
-    stroke: #fff;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 2px;
-    stroke-dasharray: 7000;
-    animation: drawPath1 4s linear, floating 2.2s linear infinite;
-  }
-
-  @keyframes drawPath1 {
-    0% {
-      stroke-dashoffset: 7000;
-    }
-
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
-
-  @keyframes floating {
-    50% {
-      transform: translate3d(0, 40px, 0);
-    }
-  }
-
-  /* 빠른메뉴 */
-  .quick {
-    margin-top: -250px;
-    height: 250px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5%;
-    position: relative;
-  }
-
-  .quick>a>div {
-    width: 150px;
-    height: 150px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 50%;
-    transition: 1s;
-  }
-
-  .quick>a>div>p {
-    text-align: center;
-    padding-top: 60px;
-    padding-bottom: 5px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    transition: 1s;
-  }
-
-  #line1 {
-    margin: auto;
-    width: 0px;
-    height: 2px;
-    background-color: pink;
-  }
-
-  #line2 {
-    margin: auto;
-    width: 0px;
-    height: 2px;
-    background-color: pink;
-  }
-
-  #line3 {
-    margin: auto;
-    width: 0px;
-    height: 2px;
-    background-color: pink;
-  }
+.ticketimg img:first-child {
+  width: 90px;
+}
 
 
+#ticketimg {
+  position: absolute;
+  width: 30px;
+  left: 20px;
+  transition: 0.5s;
+}
+
+.ticketbox:hover #ticketimg {
+  width: 60px;
+}
+
+/* 프로그램 이미지 */
+
+.pro {
+  width: 70%;
+  margin: auto;
+  position: relative;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.pro div {
+  padding: 5px;
+  margin-bottom: 50px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  box-shadow: 5px 3px 10px #cabebd;
+  overflow: hidden;
+  transition: 1s all;
+  opacity: 0.1;
+}
+
+.pro div:nth-child(even) {
+  margin-left: 60%;
+  margin-top: -10%;
+}
+
+.pro div:nth-child(odd) {
+  margin-left: 5%;
+}
+
+.pro div img {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+}
+
+.pro div h1 {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  font-size: 25px;
+  color: #fff;
+  text-align: center;
+  background-color: #000000a4;
+  transform: translate(-50%, -50%);
+  transition: 1s;
+}
+
+/* sitebanner */
+
+.sitebanner {
+  position: relative;
+  padding: 35px;
+  background: #ffffff54;
+  backdrop-filter: blur(20px);
+  width: 70%;
+  border-radius: 13px;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 350px;
+  margin-bottom: 150px;
+}
+
+.sitebanner .tabs-box {
+  display: flex;
+  list-style: none;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.tabs-box.dragging {
+  scroll-behavior: auto;
+  cursor: grab;
+}
+
+.tabs-box.dragging .tab {
+  user-select: none;
+}
+
+.tabs-box .tab {
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: 1px solid silver;
+  margin: 0 12px;
+  cursor: pointer;
+}
+
+.tabs-box .tab img {
+  width: 150px;
+  height: auto;
+}
+
+.sitebanner .icon {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 120px;
+  display: flex;
+  align-items: center;
+}
+
+.icon:first-child {
+  left: 0;
+  display: none;
+  background: linear-gradient(90deg, #ffffff8c 70%, transparent);
+}
+
+.icon:last-child {
+  right: 0;
+  justify-content: flex-end;
+  background: linear-gradient(-90deg, #ffffff8c 70%, transparent);
+}
+
+.icon i {
+  width: 55px;
+  height: 55px;
+  text-align: center;
+  line-height: 55px;
+  border-radius: 50%;
+  background: rgb(247, 202, 202);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.icon i:hover {
+  background: #efedfb;
+}
+
+.icon i:first-child {
+  margin-left: 15px;
+}
+
+.icon i:last-child {
+  margin-right: 15px;
+}
+
+/* footer */
+
+footer {
+  background-color: #00101e;
+  color: white;
+}
+
+footer ul {
+  display: flex;
+  padding: 10px;
+  color: #e5d9ed;
+}
+
+footer ul li {
+  font-size: 15px;
+  padding: 5px;
+}
+
+footer ul li:last-child {
+  border-right: none;
+}
+
+footer p {
+  padding: 10px;
+  font-size: 13px;
+}
+
+.flist {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sitelist {
+  margin: 10px;
+}
+
+#site {
+  padding: 10px;
+}
 
 
 
-  /* 프로그램 안내*/
-  .proWrap {
-    width: 100%;
-    margin: auto;
+/* 맨위로 */
+.Top {
+  color: black;
+  position: fixed;
+  font-size: 70px;
+  cursor: pointer;
+  color: #ffafad;
+  right: 20px;
+  bottom: 20px;
+}
 
-    overflow: hidden;
-    position: relative;
-    background: radial-gradient(ellipse at bottom, rgb(250, 189, 198) 0%, #fff 100%);
-  }
-
-  /* path */
-
-  .path {
-    fill: none;
-    stroke: #6e6868;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 2px;
-  }
-
-  .pathbox2 {
-    position: absolute;
-    top: 0;
-    left: 6.8%;
-  }
-
-  .pathbox3 {
-    position: absolute;
-    top: 33%;
-    left: 65%;
-  }
-
-  .pathbox4 {
-    position: absolute;
-    left: 15%;
-    top: 67%;
-  }
-
-
-  .proT {
-    height: 300px;
-    padding-top: 180px;
-    text-align: center;
-    color: #543139;
-    margin-top: 300px;
-    margin-bottom: 50px;
-    transition: all 1s;
-    opacity: 0;
-  }
-
-
-  .proT h2 {
-    font-size: 60px;
-    color: #0f020b;
-    transition: 1s;
-  }
-
-
-  .prolist {
-    position: fixed;
-    top: 30%;
-    left: 2%;
-    z-index: 1;
-    display: none;
-  }
-
-  .prolist div {
-    width: 10px;
-    height: 10px;
-    background-color: #99a3b9;
-  }
-
-  .prolist ul {
-    color: #99a3b9;
-    font-weight: bold;
-    font-size: 13px;
-  }
-
-  .prolist ul li {
-    padding-bottom: 20px;
-    list-style: circle;
-
-  }
-
-  .prolist ul li:hover {
-    list-style: square;
-    font-size: 16px;
-    color: #4f5a67;
-  }
-
-
-
-  /* 프로그램 이미지 */
-
-  .pro {
-    width: 70%;
-    margin: auto;
-    position: relative;
-  }
-
-
-
+@media screen and (max-width: 1269px) {
   .pro div {
-    padding: 5px;
-    margin-bottom: 50px;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    box-shadow: 5px 3px 10px #cabebd;
-    overflow: hidden;
-    transition: all 1s;
-    opacity: .1;
-  }
-
-  .pro div:nth-child(even) {
-    margin-left: 60%;
-    margin-top: -10%;
-
-  }
-
-  .pro div:nth-child(odd) {
-    margin-left: 5%;
-
+    width: 400px;
+    height: 400px;
   }
 
   .pro div img {
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    object-fit: cover;
+    width: 400px;
+    height: 400px;
   }
 
+  .pathbox3 {
+    top: 36%;
+  }
+}
+
+@media screen and (max-width: 969px) {
+  .pro div {
+    width: 350px;
+    height: 350px;
+  }
+
+  .pro div img {
+    width: 350px;
+    height: 350px;
+  }
+
+  .pathbox3 {
+    top: 36%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .pro > div {
+    flex-direction: column;
+  }
+
+  #icon1 {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    position: relative;
+    width: 200px;
+    right: -70px;
+    margin-top: 65px;
+  }
+
+  .menu > li > a {
+    width: 150px;
+    background-color: #00101e9d;
+    color: white;
+    backdrop-filter: blur(10px);
+    font-size: 90%;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .sub {
+    width: 150px;
+    height: auto;
+    line-height: 30px;
+    font-size: 80%;
+  }
+
+  .maintext h2 {
+    font-size: 120%;
+  }
+
+  .proT > p {
+    font-size: 80%;
+  }
+
+  .proT > h2 {
+    font-size: 250%;
+  }
+
+  .pro div {
+    width: 300px;
+    height: 300px;
+  }
+
+  .pro div img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .pro div:nth-child(even) {
+    margin-left: 20%;
+    margin-top: 20%;
+  }
+
+  .pro div:nth-child(odd) {
+    margin-left: 20%;
+    margin-top: 20%;
+  }
 
   .pro div h1 {
-    position: absolute;
-    top: 85%;
-    left: 50%;
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
-    font-size: 25px;
-    color: #fff;
-    text-align: center;
-    background-color: #000000a4;
-    transform: translate(-50%, -50%);
-    transition: 1s;
+    font-size: 100%;
   }
 
-  /* sitebanner */
-
-  .mySwiper {
-    width: 80%;
-    height: 30%;
-    margin: 100px auto;
+  .prolist {
+    left: 4%;
   }
 
+  .quick {
+    flex-direction: column;
+  }
 
-  .mySwiper img {
+  .quick > a > div {
     width: 200px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
   }
 
-
-  .swiper-wrapper {
-    margin-bottom: 50px;
-  }
-
-
-
-
-
-  /* footer */
-
-  footer {
-    background-color: #00101e;
-    color: white;
+  .quick > a > div > p {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 100%;
   }
 
   footer ul {
-    display: flex;
-    padding: 10px;
-    color: #e5d9ed;
+    flex-wrap: wrap;
   }
 
   footer ul li {
-    font-size: 15px;
-    padding: 5px;
-
-  }
-
-  footer ul li:last-child {
-    border-right: none;
+    font-size: 80%;
   }
 
   footer p {
-    padding: 10px;
-    font-size: 13px;
+    font-size: 70%;
   }
 
   .flist {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .sitelist {
-    margin: 10px;
+    flex-direction: column;
   }
 
   #site {
+    width: 100%;
+  }
 
+  .Top {
+    font-size: 3rem;
+  }
+
+  .mySwiper {
+    width: 70%;
+  }
+
+  .mySwiper img {
+    width: 100px;
+    padding-left: 20px;
+  }
+
+  .prolist ul {
+    font-size: 70%;
+  }
+
+  .prolist ul li:hover {
+    font-size: 120%;
+  }
+
+  .pathbox2 {
+    top: 0;
+    left: -11%;
+  }
+
+  .pathbox3 {
+    top: 36%;
+    left: 75%;
+  }
+
+  /* 사이트배너 */
+  
+  .tabs-box .tab {
     padding: 10px;
+    border-radius: 20px;
+    border: 1px solid silver;
+    margin: 0 12px;
+    cursor: pointer;
   }
 
-  /* 입장권 픽스 */
-
-
-  .ticketbox {
-    position: fixed;
-    top: 56%;
-    left: 10px;
+  .tabs-box .tab img {
+    width: 100px;
+    height: auto;
   }
 
-  .ticketbox p {
-    margin-top: 40px;
-    margin-left: 15px;
-    font-size: 13px;
-    font-weight: bold;
+  .icon i {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .proT {
+    font-size: 100%;
+    margin-left: 100px;
+  }
+
+  .pathbox2 {
+    top: 0;
+    left: -28%;
+  }
+
+  .pro div {
+    width: 200px;
+    height: 200px;
+  }
+
+  .pro div img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .pro div:nth-child(even) {
+    margin-left: 30%;
+    margin-top: 20%;
+  }
+
+  .pro div:nth-child(odd) {
+    margin-left: 30%;
+    margin-top: 20%;
   }
 
   .ticketimg {
-    position: absolute;
-    height: 36.5px;
-    overflow: hidden;
-  }
-
-  #ticketimg {
-    position: absolute;
-    left: 20px;
-    transition: .5s;
-  }
-
-  .ticketbox:hover #ticketimg {
     width: 50px;
   }
-
-  /* 맨위로 */
-  .Top {
-    color: black;
-    position: fixed;
-    font-size: 70px;
-    cursor: pointer;
-    color: #ffafad;
-    right: 20px;
-    bottom: 20px;
-  }
-
-  @media screen and (max-width:1269px) {
-    .pro div {
-      width: 400px;
-      height: 400px;
-    }
-
-    .pro div img {
-      width: 400px;
-      height: 400px;
-    }
-
-    .pathbox3 {
-      top: 36%;
-    }
-  }
-
-  @media screen and (max-width:969px) {
-    .pro div {
-      width: 350px;
-      height: 350px;
-    }
-
-    .pro div img {
-      width: 350px;
-      height: 350px;
-    }
-
-    .pathbox3 {
-      top: 36%;
-    }
-  }
-
-  @media screen and (max-width:769px) {
-
-
-    .pro>div {
-      flex-direction: column;
-    }
-
-    #icon1 {
-      display: block;
-    }
-
-    .menu {
-      display: none;
-      position: fixed;
-      width: 200px;
-      right: -70px;
-      margin-top: 11%;
-    }
-
-    .menu>li>a {
-      width: 150px;
-      background-color: rgba(255, 255, 255, 0.5);
-    }
-
-    .sub {
-      width: 150px;
-      height: auto;
-      line-height: 30px;
-    }
-
-    .maintext h2 {
-      font-size: 120%;
-    }
-
-    .proT>p {
-      font-size: 80%;
-    }
-
-    .proT>h2 {
-      font-size: 250%;
-    }
-
-    .pro div {
-      width: 300px;
-      height: 300px;
-    }
-
-    .pro div img {
-      width: 300px;
-      height: 300px;
-    }
-
-    .pro div:nth-child(even) {
-      margin-left: 20%;
-      margin-top: 20%;
-
-    }
-
-    .pro div:nth-child(odd) {
-      margin-left: 20%;
-      margin-top: 20%;
-    }
-
-    .pro div h1 {
-      font-size: 100%;
-    }
-
-    .prolist {
-      left: 4%;
-    }
-
-    .quick {
-      flex-direction: column;
-    }
-
-    .quick>a>div {
-      width: 200px;
-      height: 50px;
-      background-color: rgba(0, 0, 0, 0.7);
-      border-radius: 5px;
-    }
-
-
-    .quick>a>div>p {
-      text-align: center;
-      padding-top: 10px;
-      font-size: 100%;
-    }
-
-
-    footer ul {
-      flex-wrap: wrap;
-    }
-
-    footer ul li {
-      font-size: 80%;
-    }
-
-    footer p {
-      font-size: 70%;
-    }
-
-    .flist {
-      flex-direction: column;
-    }
-
-    #site {
-      width: 100%;
-    }
-
-    .Top {
-      font-size: 3rem;
-    }
-
-    .mySwiper {
-      width: 70%;
-    }
-
-    .mySwiper img {
-      width: 100px;
-      padding-left: 20px;
-    }
-
-    .prolist ul {
-      font-size: 70%;
-    }
-
-    .prolist ul li:hover {
-      font-size: 120%;
-    }
-
-    .pathbox2 {
-
-      top: 0;
-      left: -11%;
-    }
-
-    .pathbox3 {
-      top: 36%;
-      left: 75%;
-    }
-
-
-
-  }
+}
