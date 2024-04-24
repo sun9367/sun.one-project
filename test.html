@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- HTML -->
+  <input type="text" id="num1" value="0">
+  <input type="text" id="num2" value="0">
+  <button id="up1">Up 1</button>
+  <button id="down1">Down 1</button>
+  <button id="up2">Up 2</button>
+  <button id="down2">Down 2</button>
+  <button id="purchaseTicket">Purchase Ticket</button>
+  <div id="sum1">Sum 1: 0</div>
+  <div id="sum2">Sum 2: 0</div>
+
+
+
+  <script>
+
+    // JavaScript
+    let num1 = document.querySelector('#num1');
+    let num2 = document.querySelector('#num2');
+    let btnUp1 = document.querySelector('#up1');
+    let btnDown1 = document.querySelector('#down1');
+    let btnUp2 = document.querySelector('#up2');
+    let btnDown2 = document.querySelector('#down2');
+    let purchaseTicketBtn = document.querySelector('#purchaseTicket');
+
+    let a = parseInt(num1.value);
+    let b = parseInt(num2.value);
+
+    btnUp1.addEventListener('click', () => {
+      num1.value = ++a;
+      updateSums();
+    });
+
+    btnDown1.addEventListener('click', () => {
+      num1.value = --a;
+      if (num1.value < 0) {
+        num1.value = 0;
+      }
+      updateSums();
+    });
+
+    btnUp2.addEventListener('click', () => {
+      num2.value = ++b;
+      updateSums();
+    });
+
+    btnDown2.addEventListener('click', () => {
+      num2.value = --b;
+      if (num2.value < 0) {
+        num2.value = 0;
+      }
+      updateSums();
+    });
+
+    purchaseTicketBtn.addEventListener('click', () => {
+      // Perform actions related to purchasing tickets, if needed
+      alert("Tickets purchased!");
+    });
+
+    // Listen for input events on num1 and num2
+    num1.addEventListener('input', () => {
+      a = parseInt(num1.value);
+      updateSums();
+    });
+
+    num2.addEventListener('input', () => {
+      b = parseInt(num2.value);
+      updateSums();
+    });
+
+    function updateSums() {
+      let numV1 = parseInt(num1.value);
+      let numV2 = parseInt(num2.value);
+
+      document.querySelector('#sum1').innerHTML = "Sum 1: " + (numV1 + numV2);
+      document.querySelector('#sum2').innerHTML = "Sum 2: " + ((numV1 * 11000) + (numV2 * 9000));
+    }
+
+
+  </script>
+</body>
+
+</html>

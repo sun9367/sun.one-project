@@ -20,11 +20,9 @@ a {
 
 body {
   font-family: "나눔";
-  background: radial-gradient(
-    ellipse at bottom,
-    rgb(250, 189, 198) 0%,
-    #fff 100%
-  );
+  background: radial-gradient(ellipse at bottom,
+      rgb(250, 189, 198) 0%,
+      #fff 100%);
 }
 
 #container {
@@ -54,7 +52,7 @@ header {
   margin-right: 30px;
 }
 
-.menu > li > a {
+.menu>li>a {
   width: 120px;
   height: 60px;
   line-height: 60px;
@@ -184,7 +182,7 @@ header {
   position: relative;
 }
 
-.quick > a > div {
+.quick>a>div {
   width: 150px;
   height: 150px;
   background-color: rgba(0, 0, 0, 0.7);
@@ -192,7 +190,7 @@ header {
   transition: 1s;
 }
 
-.quick > a > div > p {
+.quick>a>div>p {
   text-align: center;
   padding-top: 60px;
   padding-bottom: 5px;
@@ -229,7 +227,7 @@ header {
   margin: auto;
   overflow: hidden;
   position: relative;
-  
+
 }
 
 /* path */
@@ -283,7 +281,7 @@ header {
   left: 2%;
   z-index: 1;
   display: none;
-  
+
 }
 
 .prolist div {
@@ -487,6 +485,8 @@ html {
   margin-right: 15px;
 }
 
+
+
 /* footer */
 
 footer {
@@ -573,7 +573,7 @@ footer p {
 }
 
 @media screen and (max-width: 769px) {
-  .pro > div {
+  .pro>div {
     flex-direction: column;
   }
 
@@ -581,15 +581,19 @@ footer p {
     display: block;
   }
 
+  #icon2 {
+    position: fixed;
+  }
+
   .menu {
     display: none;
-    position: relative;
+    position: fixed;
     width: 200px;
     right: -70px;
     margin-top: 65px;
   }
 
-  .menu > li > a {
+  .menu>li>a {
     width: 150px;
     background-color: #00101e9d;
     color: white;
@@ -610,11 +614,11 @@ footer p {
     font-size: 120%;
   }
 
-  .proT > p {
+  .proT>p {
     font-size: 80%;
   }
 
-  .proT > h2 {
+  .proT>h2 {
     font-size: 250%;
   }
 
@@ -650,14 +654,14 @@ footer p {
     flex-direction: column;
   }
 
-  .quick > a > div {
+  .quick>a>div {
     width: 200px;
     height: 50px;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 5px;
   }
 
-  .quick > a > div > p {
+  .quick>a>div>p {
     text-align: center;
     padding-top: 15px;
     font-size: 100%;
@@ -715,7 +719,11 @@ footer p {
   }
 
   /* 사이트배너 */
-  
+
+  .sitebanner {
+    width: 100%;
+  }
+
   .tabs-box .tab {
     padding: 10px;
     border-radius: 20px;

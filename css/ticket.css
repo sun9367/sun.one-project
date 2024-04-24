@@ -493,13 +493,16 @@ footer {
     display: block;
   }
 
+  #icon2 {
+    position: fixed;
+  }
+
   .menu {
     display: none;
-    position: relative;
+    position: fixed;
     width: 200px;
     right: -70px;
     margin-top: 65px;
-    z-index: 99;
   }
 
   .menu>li>a {

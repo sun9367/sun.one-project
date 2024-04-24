@@ -182,6 +182,7 @@ proImgObserve.observe(proImg[6])
 
 
 
+
 //prolist - .pro 위치부터 보임
 
 let prolist = document.querySelector('.prolist');
@@ -197,19 +198,17 @@ let show = document.querySelector('.pro');
 listObserve.observe(show);
 
 
-//prolist - sitelist 보이면 사라짐
 
-let list2Observe = new IntersectionObserver((a)=>{
-  a.forEach((s)=>{
-    if(s.isIntersecting) {
-      prolist.style = 'display : none;';
-    } else { prolist.style = 'display : block;';}
-  })
-})
-let none = document.querySelector('.sitelist')
-list2Observe.observe(none);
 
-//sitebanner
+
+
+
+
+
+
+
+
+//sitebanner 드래그 or 버튼슬라이드
 const tabasBox = document.querySelector('.tabs-box'),
 arrowIcons = document.querySelectorAll('.icon i');
 
