@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/map.css">
+  <script src="https://kit.fontawesome.com/1df9c5970c.js" crossorigin="anonymous"></script>
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/map.js" defer></script>
+  <title>guide</title>
+
+</head>
+
+<body>
+  <div id="container">
+    <i class="fa-solid fa-bars" id="icon1"></i>
+    <i class="fa-solid fa-xmark" id="icon2"></i>
+    <header>
+      <div class="logo"><a href="index.html"><img src="img/logo/logo.png" alt="고양국제꽃박람회"></a></div>
+      <ul class="menu">
+        <li><a href="#">꽃박람회</a>
+          <ul class="sub">
+            <li><a href="#">오시는길</a></li>
+            <li><a href="#">행사개요</a></li>
+            <li><a href="#">인사말</a></li>
+          </ul>
+        </li>
+        <li><a href="#">관람안내</a>
+          <ul class="sub">
+            <li><a href="ticketguide.html">입장권안내</a></li>
+            <li><a href="tour.html">이용안내</a></li>
+            <li><a href="facility.html">편의시설</a></li>
+            <li><a href="guide.html">가이드맵</a></li>
+          </ul>
+        </li>
+        <li><a href="#">프로그램</a>
+          <ul class="sub">
+            <li><a href="#">야외전시</a></li>
+            <li><a href="#">실내전시</a></li>
+            <li><a href="#">플라워그랑프리</a></li>
+            <li><a href="#">어워드쇼</a></li>
+            <li><a href="#">국제꽃포럼</a></li>
+            <li><a href="#">공연/이벤트</a></li>
+            <li><a href="#">플라워마켓</a></li>
+          </ul>
+        </li>
+        <li><a href="#">커뮤니티</a>
+          <ul class="sub">
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">자주하는질문</a></li>
+            <li><a href="#">보도자료</a></li>
+            <li><a href="#">포토갤러리</a></li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+    <div id="mapbanner">
+      <h1>International Hourticulture Goyang Korea</h1>
+      <h1>Flower in the Earth</h1>
+
+
+    </div>
+
+    <div class="gridwrap">
+      <ul class="gridlist">
+        <li class="on"><a href="ticketguide.html">입장권안내</a></li>
+        <li><a href="tour.html">이용안내</a></li>
+        <li><a href="facility.html">편의시설</a></li>
+        <li><a href="guide.html">가이드맵</a></li>
+      </ul>
+      <div class="grid">
+        <div class="grid-item ticket">
+          <p>입장권 판매기간</p>
+          <div>
+            <p>사전예매 판매기간</p>
+            <p>2024. 3. 15. ~ 4. 19.</p>
+          </div>
+
+          <div>
+            <p>입장권 현장판매기간</p>
+            <p>2024. 4. 26. ~ 5. 12.</p>
+          </div>
+
+          <section class="section1">
+            <p>입장권 요금표</p>
+            <table border="1">
+              <tr>
+                <th colspan="2" rowspan="2" style="background-color: pink; width: 20%; height: 60px;">구분</th>
+                <th colspan="2" style="background-color: pink; width: 40%;">입장요금(원)</th>
+                <th colspan="2" rowspan="2" style="background-color: pink;">적용범위</th>
+              </tr>
+              <tr>
+                <th style="background-color: pink;">현장매표<br>(4.26 ~ 5.12)</th>
+                <th style="background-color: pink;">사전예매<br>(3.15 ~ 4.19)</th>
+              </tr>
+              <tr>
+                <th rowspan="2" style="height: 10vh;">보통권</th>
+                <td>일반권</td>
+                <td>15,000원</td>
+                <td>11,000원</td>
+                <td rowspan="4">
+                  <ul>
+                    일반권
+                    <li>성인 : 만 19세(2005년생)~만64세</li>
+                  </ul>
+                  <ul>
+                    우대권
+                    <li>만 19세(2005년생)~만64세</li>
+                    <li>경로 : 만 65세이상(1959년생)</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>우대권</td>
+                <td>12,000원</td>
+                <td>9,000원</td>
+              </tr>
+              <tr>
+                <th rowspan="2" style="height: 10vh;">고양시민권</th>
+                <td>일반권</td>
+                <td rowspan="5"></td>
+                <td>10,000원</td>
+              </tr>
+              <tr>
+                <td>우대권</td>
+                <td>8,000원</td>
+              </tr>
+              <tr>
+                <th rowspan="2" style="height: 10vh;">단체권</th>
+                <td>일반단체</td>
+                <td>10,000원</td>
+                <td rowspan="2">
+                  <ul>
+                    <li>사전예약 평일 단체에 한함</li>
+                    <li>일반 20인 이상</li>
+                    <li>영유아 10인 이상</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>유아단체</td>
+                <td>5,000원</td>
+              </tr>
+              <tr>
+                <th style="height: 10vh;">전 기간권</th>
+                <td>고양시민</td>
+                <td>30,000원</td>
+                <td>
+                  <ul>
+                    <li>카드형(고유바코드 + 사진삽입)</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+            <p>* 온라인 사전예매권 구매처 : 네이버, 티몬, 야놀자, 카카오톡</p>
+          </section>
+
+          <section class="section2">
+            <table border="1">
+              <tr>
+                <th rowspan="2" style="width: 20%;">할인대상<br>(현장매표확인)</th>
+                <td style="width: 20%; height: 10vh;">3,000원 할인</td>
+                <td>
+                  <ul>
+                    <li>고양시민</li>
+                    <li>대중교통 이용객</li>
+                    <li>입장권 제휴처</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td style="height: 10vh;">50% 할인</td>
+                <td>
+                  <ul>
+                    <li>국가유공자(본인)</li>
+                    <li>의사상자(본인)</li>
+                    <li>다문화가정</li>
+                    <li>국민기초생활수급 대상자</li>
+                    <li>중증 장애인 (구1-3급) 및 동반 1인</li>
+                    <li>경증 장애인 (구4-6급) 본인</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th style="height: 10vh;">무료입장</th>
+                <td colspan="2">
+                  <ul>
+                    <li>평일 유아 단체 인솔자 (10명당 1인)</li>
+                    <li>만36개월 미만 (유료 입장 보호자 1인당 1인)</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+
+            <p>* 무료입장 대상의 경우 증빙서류 지참, 현장매표소에서 제시</p>
+            <ul>* 유의사항
+              <li>어린이·청소년 기준 : 만 36개월 이상 ~ 만 18세 (2021년생 ~ 2006년생)</li>
+              <li>만 65세 이상 기준 : 1959년생 이전</li>
+              <li>만 36개월 미만 영유아 : 유료입장 보호자 1인당 1인 (증빙서류 지참 필수)</li>
+              <li>국가유공자, 의사상자, 다문화가정, 국민기초생활수급대상자, 장애인 : 현장판매 성인권, 어린이·청소년·만 65세 이상권에서 50%할인 적용</li>
+              <li>장애인 할인 기준 : 중증(동반 1인 동일 할인율 적용), 경증 (본인)</li>
+              <li>대중교통 이용객 현장판매 성인권, 어린이·청소년·만 65세 이상권에서 3,000원 할인 적용</li>
+              <li>중복할인 불가</li>
+            </ul>
+          </section>
+
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+  </div>
+
+  <a href="#container">
+    <div class="top">
+      <i class="fa-solid fa-angles-up"></i>
+    </div>
+  </a>
+
+
+</body>
+
+</html>
