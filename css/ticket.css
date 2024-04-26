@@ -20,6 +20,9 @@ a {
 
 body {
   font-family: "나눔";
+  background: radial-gradient(ellipse at bottom,
+      rgb(250, 189, 198) 0%,
+      #fff 100%);
 }
 
 #container {
@@ -124,14 +127,15 @@ header {
   flex: 1;
   line-height: 50px;
   text-align: center;
-  background-color: #f0f6f6;
+  background-color: #f0f6f673;
+  backdrop-filter: blur(20px);
   font-weight: bold;
   transition: .5s;
   cursor: pointer;
 }
 
 .contant>ul li:hover {
-  background-color: pink;
+  background-color: rgba(255, 192, 203, 0.3);
 }
 
 .contant .li-1 {
@@ -166,13 +170,19 @@ header {
 
 @keyframes ani {
   50% {
-    background-color: palevioletred;
+    background-color: rgba(216, 112, 147, 0.3);
   }
 }
 
 .contant .li-2 {
   width: 95%;
+  height: 600px;
   margin: auto;
+}
+
+.li-2 iframe {
+  width: 100%;
+  height: 600px;
 }
 
 .on1 {
@@ -185,6 +195,7 @@ header {
 
 .contant1 {
   width: 60%;
+  margin-bottom: 20px;
   border-left: 1px solid silver;
 }
 
@@ -196,16 +207,19 @@ header {
 .contant1 .ticketbox>h1 {
   font-size: 20px;
   margin-top: 20px;
+  padding-left: 5%;
   margin-bottom: 20px;
   height: 50px;
   line-height: 50px;
-  background-color: #fff;
+  background-color: #f0f6f673;
+  backdrop-filter: blur(20px);
 }
 
 .list1 {
   display: flex;
   align-items: center;
-  background-color: #f0f6f6;
+  background-color: #f0f6f673;
+  backdrop-filter: blur(20px);
   padding: 10px;
   justify-content: space-around;
 }
@@ -223,6 +237,16 @@ header {
   font-weight: bold;
   text-align: center;
   border: 1px solid silver;
+  background-color: #ffffff17;
+  backdrop-filter: blur(20px);
+}
+
+#num1,
+#num2 {
+  background-color: #ffffff17;
+  backdrop-filter: blur(20px);
+  border: 1px solid silver;
+  outline-color: rgba(224, 79, 127, 0.596);
 }
 
 #down1,
@@ -243,7 +267,8 @@ header {
   display: flex;
   justify-content: space-around;
   font-size: 13px;
-  background-color: #f0f6f6;
+  background-color: #f0f6f673;
+  backdrop-filter: blur(20px);
   border-radius: 10px;
   padding: 10px;
   margin-top: 10px;
@@ -255,17 +280,17 @@ header {
 /* 예매 정보 */
 .contant1 .rebox {
   margin-top: 40px;
-  background-color: #f0f6f6;
+  background-color: #f0f6f673;
+  backdrop-filter: blur(20px);
 }
 
 .rebox>h1 {
-  font-size: 20px;
   font-size: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
   height: 50px;
   line-height: 50px;
-  background-color: #fff;
+  margin-left: 5%;
 }
 
 
@@ -292,6 +317,10 @@ header {
   padding: 10px;
   width: 100%;
   margin-bottom: 20px;
+  background-color: #ffffff17;
+  backdrop-filter: blur(20px);
+  border: 1px solid silver;
+  outline-color: rgba(224, 79, 127, 0.596);
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -303,7 +332,8 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* 예약주의사항 */
 .info {
-  background-color: #f0f6f6;
+  background-color: #f0f6f673;
+  backdrop-filter: blur(20px);
 }
 
 .info>div {
@@ -329,7 +359,8 @@ input[type="number"]::-webkit-inner-spin-button {
   width: 95%;
   margin: auto;
   padding: 10px;
-  background-color: #f0f6f6;
+  background-color: #f0f6f673;
+  backdrop-filter: blur(20px);
 }
 
 
@@ -396,7 +427,8 @@ table {
   margin: auto;
   width: 50%;
   height: 50px;
-  background-color: rgb(235, 233, 233);
+  background-color: rgba(163, 162, 162, 0.3);
+  backdrop-filter: blur(20px);
   color: gray;
   border-radius: 10px;
   text-align: center;
@@ -410,7 +442,8 @@ table {
 
 .on {
   /* 약관 필수 체크시 결제하기 스타일변경 */
-  background-color: palevioletred;
+  background-color: rgba(224, 79, 127, 0.596);
+  backdrop-filter: blur(20px);
   border-radius: 10px;
   color: white;
   cursor: pointer;
@@ -452,13 +485,44 @@ input[type="checkbox"]:checked+label:before {
 
 
 
+/* footer */
+
 footer {
   background-color: #00101e;
   color: white;
-  height: 100px;
+}
+
+footer ul {
+  display: flex;
+  padding: 10px;
+  color: #e5d9ed;
+}
+
+footer ul li {
+  font-size: 15px;
+  padding: 5px;
+}
+
+footer ul li:last-child {
+  border-right: none;
+}
+
+footer p {
+  padding: 10px;
   font-size: 13px;
-  text-align: center;
-  padding: 20px;
+}
+
+.flist {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sitelist {
+  margin: 10px;
+}
+
+#site {
+  padding: 10px;
 }
 
 @media screen and (max-width: 1275px) {
@@ -541,7 +605,9 @@ footer {
     margin: auto;
   }
 
-  .contant .li-1 {
+  .contant .li-1,
+  li-2,
+  .li-2 iframe {
     height: 500px;
   }
 
@@ -562,6 +628,26 @@ footer {
 
   .agree .pay>h1 {
     font-size: 100%;
+  }
+
+  footer ul {
+    flex-wrap: wrap;
+  }
+
+  footer ul li {
+    font-size: 80%;
+  }
+
+  footer p {
+    font-size: 70%;
+  }
+
+  .flist {
+    flex-direction: column;
+  }
+
+  #site {
+    width: 100%;
   }
 
 }

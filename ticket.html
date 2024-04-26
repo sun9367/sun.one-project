@@ -71,33 +71,11 @@
         </div>
 
         <div class="li-2 on1">
-          <!-- * 카카오맵 - 지도퍼가기 -->
-          <!-- 1. 지도 노드 -->
-          <div id="daumRoughmapContainer1713854065927" class="root_daum_roughmap root_daum_roughmap_landing"
-            style="width: 100%; position: relative; z-index: -1;"></div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d1579.3972029006056!2d126.7686083295882!3d37.65403729577195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x357c854654af619d%3A0x14ddecc7b303eb0!2z6rK96riw64-EIOqzoOyWkeyLnCDsnbzsgrDrj5nqtawg7Zi47IiY66GcIDU5NSBLUiDtmLjsiJjqs7Xsm5Ag6rOg7JaR6r2D7KCE7Iuc6rSA!3m2!1d37.6538237!2d126.768853!5e0!3m2!1sko!2skr!4v1714093214967!5m2!1sko!2skr"
+            style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-          <!--
-          	2. 설치 스크립트
-          	* 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-          -->
-          <script charset="UTF-8" class="daum_roughmap_loader_script"
-            src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-
-          <!-- 3. 실행 스크립트 -->
-          <script charset="UTF-8">
-            setTimeout(function () {
-              new daum.roughmap.Lander({
-                "timestamp": "1713854065927",
-                "key": "2j4c9",
-              }).render();
-            }, 1000);
-
-
-          </script>
         </div>
-
-
-
 
 
       </div>
@@ -293,15 +271,58 @@
 
 
     <footer>
-      <p>경기 고양시 일산동구 호수로 731 (장항동)
-        일산호수공원 일원</p>
-      <p>이용안내
-        : 행사관련 문의
-        : 031-908-7750</p>
+      <div class="flist">
+        <ul>
+          <li><a href="#" onclick="return false;">개인정보처리방침</a></li>
+          <li><a href="#" onclick="return false;">이용약관</a></li>
+          <li><a href="#" onclick="return false;">CCTV운영관리</a></li>
+          <li><a href="#" onclick="return false;">이메일무단수집거부</a></li>
+          <li><a href="#" onclick="return false;">기관소개</a></li>
+        </ul>
 
-      <p>예약관련 문의
-        : 070-4322-3118 / 070-5099-7327</p>
-      <p><a href="https://flower.or.kr/">https://flower.or.kr/</a></p>
+        <!-- 사이트리스트 -->
+        <div class="sitelist">
+          <select name="optionsite" id="site" onchange="window.open(value,'_blank');">
+            <option value="관련사이트바로가기">관련사이트 바로가기</option>
+            <option value="https://www.goyang.go.kr/www/index.do">
+              고양시청
+            </option>
+            <option value="https://www.goyangcouncil.go.kr/">
+              고양특례시의회
+            </option>
+            <option value="https://www.gg.go.kr/">경기도</option>
+            <option value="https://www.gys.or.kr/">고양도시관리공사</option>
+            <option value="https://www.artgy.or.kr/MA/MA0001V.aspx">
+              고양문화재단
+            </option>
+            <option value="https://www.gipa.or.kr/main/main.php">
+              고양산업진흥원
+            </option>
+            <option value="https://korean.goyangcvb.com/">
+              고양컨벤션뷰로
+            </option>
+            <option value="https://goyangcm.or.kr/home/ko/main">
+              고양어린이박물관
+            </option>
+          </select>
+        </div>
+      </div>
+      <p>
+        고양국제꽃박람회 Goyang International Flower Foundation | 이사장 :
+        이동환 | Chairman of the board : Lee Dong-hwan
+      </p>
+      <p>
+        경기도 고양시 일산동구 호수로 595(장항동) 고양꽃전시관, 10400 | 595
+        Hosu-ro, Ilsandong-gu, Goyang-si, Gyeonggi-do, Republic of Korea,
+        10400
+      </p>
+      <p>
+        사업자번호 Corporate Registration Number : 128-82-06346 |
+        통신판매업신고번호 Online Marketing Business Number :
+        2010-경기고양-1312호
+      </p>
+      <p>TEL : 031-908-7750~2 | FAX : 031-908-7760</p>
+      <p>COPYRIGHT 2024 고양국제꽃박람회. Designed by Lee Sun A</p>
     </footer>
   </div>
 

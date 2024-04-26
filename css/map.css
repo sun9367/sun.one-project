@@ -16,10 +16,14 @@ a {
 @font-face {
   font-family: "나눔";
   src: url("../font/NanumGothic.woff2");
+
 }
 
 body {
   font-family: "나눔";
+  background: radial-gradient(ellipse at bottom,
+      rgb(241, 214, 218) 0%,
+      #fff 100%);
 }
 
 html {
@@ -102,14 +106,10 @@ header {
   width: 100%;
   margin: auto;
   height: 300px;
-  margin: 20px 0;
   overflow: hidden;
   position: relative;
-}
-
-
-#mapbanner>h2 {
-  text-align: center;
+  transition: 1s all;
+  opacity: 0;
 }
 
 #mapbanner>h1 {
@@ -117,22 +117,49 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  -webkit-text-stroke: 1px rgb(70, 39, 22);
+  text-align: center;
   font-size: 3rem;
   font-weight: 300;
   color: transparent;
-  white-space: nowrap;
   transition: .5s;
-}
-
-#mapbanner>h1:first-child {
-  -webkit-text-stroke: 1px pink;
+  z-index: 90;
 }
 
 
-#mapbanner>h1:last-child {
-  top: 70%;
+/* path */
+.path {
+  fill: none;
+  stroke: #cccccc;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+}
 
-  -webkit-text-stroke: 1px rgb(70, 39, 22);
+
+
+.pathbox3 {
+  position: absolute;
+  left: 15%;
+  top: -50px;
+  stroke-dasharray: 7000;
+  animation: drawPath3 4s linear, floating 2.2s linear infinite;
+}
+
+@keyframes drawPath3 {
+  0% {
+    stroke-dashoffset: 7000;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes floating {
+  50% {
+    transform: translate3d(0, 40px, 0);
+  }
 }
 
 
@@ -145,7 +172,8 @@ header {
 
 .gridlist {
   display: flex;
-  background-color: rgb(255, 232, 236);
+  background-color: rgba(248, 224, 228, 0.5);
+  backdrop-filter: blur(20px);
 }
 
 .gridlist li {
@@ -188,7 +216,9 @@ header {
   border-radius: 10px;
   padding-top: 30px;
   text-align: center;
-  border: 1px solid silver;
+  border: 1px solid rgba(228, 196, 155, 0.4);
+  background-color: #ffffff75;
+  backdrop-filter: blur(20px);
 }
 
 
@@ -215,11 +245,28 @@ table {
 }
 
 th {
-  background-color: rgb(255, 232, 236);
+  background-color: rgba(241, 220, 193, 0.4);
+  backdrop-filter: blur(20px);
 }
 
 td {
-  background-color: rgb(243, 242, 242);
+  background-color: rgba(236, 234, 234, 0.7);
+  backdrop-filter: blur(20px);
+}
+
+
+.section1 table tr:nth-child(2) th {
+  background-color: rgba(241, 220, 193, 0.4);
+  backdrop-filter: blur(20px);
+}
+
+.section1 table tr:nth-child(1) th:nth-child(1) {
+  width: 20%;
+  height: 60px;
+}
+
+.section1 table tr:nth-child(1) th:nth-child(2) {
+  width: 40%;
 }
 
 td>ul {
@@ -235,6 +282,7 @@ td>ul li {
 
 .section2>ul {
   margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 .section2>ul li {
@@ -270,7 +318,7 @@ td>ul li {
 
 .tourguidebox {
   display: flex;
-  height: 700px;
+  height: 900px;
 }
 
 .tourguide1 {
@@ -430,6 +478,46 @@ td>ul li {
   margin-top: 30px;
 }
 
+/* footer */
+
+footer {
+  background-color: #00101e;
+  color: white;
+}
+
+footer ul {
+  display: flex;
+  padding: 10px;
+  color: #e5d9ed;
+}
+
+footer ul li {
+  font-size: 15px;
+  padding: 5px;
+}
+
+footer ul li:last-child {
+  border-right: none;
+}
+
+footer p {
+  padding: 10px;
+  font-size: 13px;
+}
+
+.flist {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sitelist {
+  margin: 10px;
+}
+
+#site {
+  padding: 10px;
+}
+
 
 /* 맨위로 */
 .top {
@@ -449,22 +537,28 @@ td>ul li {
 }
 
 /* 옵션제어 */
-
-
-
 .on {
-  background-color: pink;
+  background-color: rgba(253, 238, 189, 0.4);
+  backdrop-filter: blur(20px);
 }
 
 @media screen and (max-width: 940px) {
   #mapbanner>h1 {
     font-size: 2.5rem;
   }
+
+  .pathbox3 {
+    left: 10%;
+  }
 }
 
 @media screen and (max-width: 890px) {
   .gridwrap {
     width: 95%;
+  }
+
+  .pathbox3 {
+    left: 5%;
   }
 }
 
@@ -506,7 +600,7 @@ td>ul li {
   }
 
   #mapbanner>h1 {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
   }
 
   .ticket>div>p {
@@ -519,9 +613,25 @@ td>ul li {
     padding: 5px
   }
 
+  footer ul {
+    flex-wrap: wrap;
+  }
 
+  footer ul li {
+    font-size: 80%;
+  }
 
+  footer p {
+    font-size: 70%;
+  }
 
+  .flist {
+    flex-direction: column;
+  }
+
+  #site {
+    width: 100%;
+  }
 }
 
 
@@ -537,12 +647,6 @@ td>ul li {
 
   #mapbanner>h1 {
     font-size: 1.5rem;
-    white-space: wrap;
-    text-align: center;
-  }
-
-  #mapbanner>h1:last-child {
-    top: 75%;
   }
 
   .download>* {
